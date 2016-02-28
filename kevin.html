@@ -1,0 +1,106 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
+  <script src="https://raw.githubusercontent.com/bgrins/TinyColor/master/dist/tinycolor-min.js"></script>
+  <style>
+
+  body {
+    font-family: monospace;
+    background-color: #080D16;
+    padding: 0px;
+    margin: 0px;
+    color: #C7B7B1;
+  }
+
+  h1 {
+    padding: 2em 2em 1em 2em ;
+  }
+
+  .axis, .graph_label {
+    font-size: 0.67em;
+    font-family: monospace;
+  }
+  .axis path {
+    fill: none;
+    stroke: black;
+  }
+
+  .map_text {
+    font-size: 0.60em;
+  }
+
+  .rec_graph {
+    font-family: 'Helvetica';
+    font-size: 9px;
+  }
+
+  .rec_axis path {
+    fill: none;
+    stroke: #6a6a6a;
+  }
+
+  .small {
+    font-family: monospace;
+    font-size: .5em;
+  }
+
+
+
+  .info {
+    /*background-color: #524E4B;*/
+    padding: 6px 12px;
+    width: 270px;
+    margin-left: 6px;
+  }
+
+  #info2 {
+    margin-top: 105px;
+    overflow: auto;
+  }
+
+  ul {
+    padding-left: 22px;
+  }
+
+
+  div {
+    float: left;
+  }
+
+  .flexgraph {
+    display: flex; /* or inline-flex */
+  }
+
+  .artist {
+    color: #394358;
+  }
+
+  .song {
+    color: #B16B56;
+  }
+
+
+  </style>
+</head>
+<body>
+  <h1>Number of popular songs/artists through time.</h1>
+  <div class="flexgraph">
+    <div id="out2"></div>
+    <div id="info2" class="info">
+      <h3>How varied is the billboard Hot-100? (YOY)</h3>
+      <p>The billboard hot-100 is arguably <i><b>the</b></i> chart when it comes to song popularity in the US. All 52 weeks of the year, a listing of the 100 most played songs gives us insights into what people listen and buy. Over a single year however, how many different songs become 'popular' by this metric? Do these songs come from a plentiful collection of artists, or do only a few big-name-bands dominate the charts? On the left, 56 years of billboard data on unique song/artist counts are charted, and the trends become apparent.</p>
+      <p id="out2key"></p>
+      <h4>Trends.</h4>
+      <ul>
+        <li>The 60s saw the most fluent charts. In 1967, songs came in and out, amounting to <span class="song">827</span> different songs in the charts for the year. That's more than double the measly <span class="song">406</span> different songs that charted in 1994.</li>
+        <li>More artists got a chance to be popular in the old days too. <span class="artist">423</span> different performers reached the billboard in 1970; last year it was only <span class="artist">346</span>.
+        </li>
+        <li>The charts of the 90s were dominated by only few. The entire decade follows this trend, with an all-time artist count of <span class="artist">291</span> different performers in 1992.</li>
+      </ul>
+    </div>
+  </div>
+  <script src="kevin.js"></script>
+</body>
+</html>
