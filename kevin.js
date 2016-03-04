@@ -38,98 +38,98 @@ BucketObject.prototype.map = function(cb) {
  * First graph 1958-08-09 - 2016-03-05
  */
 
-(function () { /** to keep our global scope clean. */
+// (function () { /** to keep our global scope clean. */
 
-  /** Setup */
-  var svg  = d3
-        .select("#out1")
-        .append("svg")
-        .attr("width", 20080)
-        .attr("height", 580),
+//   /** Setup */
+//   var svg  = d3
+//         .select("#out1")
+//         .append("svg")
+//         .attr("width", 20080)
+//         .attr("height", 580),
 
-      swdth = svg.attr('width'),
-      shght = svg.attr('height'),
+//       swdth = svg.attr('width'),
+//       shght = svg.attr('height'),
 
-      on_svg = appended_to(svg),
+//       on_svg = appended_to(svg),
 
-      padding = 25,
+//       padding = 25,
 
-      start_date = new Date('1958-08-09'),
-      end_date   = new Date('2016-03-05');
+//       start_date = new Date('1958-08-09'),
+//       end_date   = new Date('2016-03-05');
 
-  console.log(start_date, end_date);
+//   console.log(start_date, end_date);
 
 
 
-  var xScale = d3.time.scale()
-              .domain([start_date, end_date])
-              .range([padding, (swdth - padding)]);
-  var yScale = d3.scale.linear()
-              .domain([0, 100])
-              .range([(shght - padding), padding]);
+//   var xScale = d3.time.scale()
+//               .domain([start_date, end_date])
+//               .range([padding, (swdth - padding)]);
+//   var yScale = d3.scale.linear()
+//               .domain([0, 100])
+//               .range([(shght - padding), padding]);
 
-  var xAxis = d3.svg.axis()
-    .scale(xScale).orient("bottom").ticks(10);
+//   var xAxis = d3.svg.axis()
+//     .scale(xScale).orient("bottom").ticks(10);
 
-  var yAxis = d3.svg.axis()
-    .scale(yScale).orient("left").ticks(5);
+//   var yAxis = d3.svg.axis()
+//     .scale(yScale).orient("left").ticks(5);
   
-  svg
-    .append("g")
-    .attr("transform", "translate(0," + (svg.attr('height') - padding) + ")")
-    .attr("class", "axis")
-    .call(xAxis);
+//   svg
+//     .append("g")
+//     .attr("transform", "translate(0," + (svg.attr('height') - padding) + ")")
+//     .attr("class", "axis")
+//     .call(xAxis);
 
-  svg
-    .append("g")
-    .attr("transform", "translate(" + padding + ",0)")
-    .attr("class", "axis")
-    .call(yAxis);
-
-
-  on_svg({
-    'append' : 'circle',
-    'cx'     : xScale(new Date('2006-01-05')),
-    'cy'     : yScale(30),
-    'r'      : 3,
-    'fill'   : '#FF3300',
-    'stroke' : '#BB2200',
-    'stroke-width' : '1px'
-  });
+//   svg
+//     .append("g")
+//     .attr("transform", "translate(" + padding + ",0)")
+//     .attr("class", "axis")
+//     .call(yAxis);
 
 
-  d3.json("data/songtrack.json", function(err, song_arr) {
-    if (err) return console.trace(err);
+//   on_svg({
+//     'append' : 'circle',
+//     'cx'     : xScale(new Date('2006-01-05')),
+//     'cy'     : yScale(30),
+//     'r'      : 3,
+//     'fill'   : '#FF3300',
+//     'stroke' : '#BB2200',
+//     'stroke-width' : '1px'
+//   });
 
-    // We have too much data
-    // var song_arr = song_arr.slice(0, 2000);
+
+//   d3.json("data/songtrack.json", function(err, song_arr) {
+//     if (err) return console.trace(err);
+
+//     // We have too much data
+//     // var song_arr = song_arr.slice(0, 2000);
   
-    var song_arr = [song_arr[0]]
+//     var song_arr = [song_arr[0]]
 
-    song_arr.forEach(function (song) {
+//     song_arr.forEach(function (song) {
 
-      song.ranks.map(function (rank) {
-        rank.date = new Date(rank.date);
-        return rank;
-      });
+//       song.ranks.map(function (rank) {
+//         rank.date = new Date(rank.date);
+//         return rank;
+//       });
 
-      var line = d3.svg.line()
-          .x(function(rank) { return xScale(rank.date); })
-          .y(function(rank) { return yScale(rank.rank); })
-          .interpolate("basis");
+//       var line = d3.svg.line()
+//           .x(function(rank) { return xScale(rank.date); })
+//           .y(function(rank) { return yScale(rank.rank); })
+//           .interpolate("basis");
 
-      on_svg({
-        'append' : 'path',
-        'd' : line(song.ranks),
-        'stroke' : 'red',
-        'stroke-width' : 2,
-        'fill' : 'none',
-        'opacity': 0.25
-      });
+//       on_svg({
+//         'append' : 'path',
+//         'd' : line(song.ranks),
+//         'stroke' : 'red',
+//         'stroke-width' : 2,
+//         'fill' : 'none',
+//         'opacity': 0.25
+//       });
 
-    });
-  });
-}) //();
+//     });
+//   });
+// }) //();
 
 
 
@@ -138,7 +138,7 @@ BucketObject.prototype.map = function(cb) {
  */
 
 (function () { /** to keep our global scope clean. */
-
+  
   /** Setup */
   var svg = d3
         .select("#out2")
