@@ -6,14 +6,11 @@
   stroke: #fff;
   stroke-width: 1.5px;
 }
-.text{
-  font-size:10px;
-  text-transform:capitalize;
-}
+
 #container {
   margin:10px 10%;
   border:2px solid #000;
-  border-radius: 30px;
+  border-radius: 5px;
   height:100%;
   overflow:hidden;
   background: #F0F8FF;
@@ -34,7 +31,7 @@ div.tooltip {
 .graticule {
   fill: none;
   stroke: #bbb;
-  stroke-width: .8px;
+  stroke-width: .5px;
   stroke-opacity: .5;
 }
 .equator {
@@ -43,28 +40,21 @@ div.tooltip {
 }
 
 h1 {
-font-size: 250%;
-text-align: center;
-text-decoration: underline;
-}
-p.imageLegend
-img {
-width:30%;
-height:10em;
-display: block;
-margin: 0 auto;
-}
+    font-size: 200%;
+	text-align:center;
+	text-decoration: underline;
+
 }
 </style>
 </head>
 <body>
-<h1> Top 20 Countries with the most popular music!</h1>
+<h1>Top 20 Countries with the most popular music</h1>
+
+
   <div id="container"></div>
 
 <script src="js/d3.min.js"></script>
 <script src="js/topojson.v1.min.js"></script>
-<script src="http://d3js.org/colorbrewer.v1.min.js"></script>
-
 <script>
 d3.select(window).on("resize", throttle);
 
@@ -167,6 +157,7 @@ function click() {
 }
 
 
+
 //function to add points and text to the map (used in plotting capitals)
 function addpoint(lat,lon,text) {
 
@@ -233,7 +224,6 @@ function draw(topo) {
                         if (data2CountryCode == jsonCountryCode) {
                             //Copy the data2 rank value into the GeoJSON, with the name "color"
                             json.features[j].properties.color = datarank;
-							console.log(json.features[j].properties.color);
 
                             //Stop looking through the JSON
                             break;
@@ -243,16 +233,19 @@ function draw(topo) {
                 }
 	
 var color = d3.scale.quantize()
-            .range(['#a50026','#d73027','#f46d43','#fdae61','#fee08b','#ffffbf','#d9ef8b','#a6d96a','#66bd63','#1a9850','#006837',
-			'#fcfbfd','#efedf5','#dadaeb','#bcbddc','#9e9ac8','#807dba','#6a51a3','#54278f','#3f007d'])
+            .range(["Lime","GreenYellow","LawnGreen","LightGreen","LimeGreen","Green","DarkGreen","Yellow","Gold",
+			"GoldenRod","DarkGoldenRod","Orange" 	
+,"DarkOrange","Coral","Red","OrangeRed","Tomato","Crimson","DarkRed","Brown"])
 .domain([(d3.min(data2, function(d) { return d.rank; })),(d3.max(data2, function(d) { return d.rank; }))
 ]);	
 
-               var country = g.selectAll(".country")
+         var country = g.selectAll(".country")
                    .data(json.features) //in my example, json.features
                    .enter()
                    .append("path")
-				   
+				   .on("click", function(d,i){
+					console.log("Population for " + d.properties.name + " is " + d.properties.pop_est + " as of " + d.properties.lastcensus)
+					})
                    .attr("d", path)
                    .style("fill", function(d) {
 
@@ -265,6 +258,7 @@ var color = d3.scale.quantize()
                             //If value is undefined…
                             return "#ccc";
                        }
+				
 	  });
 	  
 	  
@@ -273,27 +267,30 @@ var color = d3.scale.quantize()
   var offsetT = document.getElementById('container').offsetTop+10;
 
   //tooltips
+  //modified to display rank of country, if it has one, if not, doesnt display any rank
   country
     .on("mousemove", function(d,i) {
-
       var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
-
-      tooltip.classed("hidden", false)
+    
+			 if (d.properties.color) {
+			  tooltip.classed("hidden", false)
              .attr("style", "left:"+(mouse[0]+offsetL)+"px;top:"+(mouse[1]+offsetT)+"px")
-             .html(d.properties.name);
-
+			 .html(d.properties.name + " " + "Rank" + " " + d.properties.color);
+			 }
+			 else {
+			  tooltip.classed("hidden", false)
+             .attr("style", "left:"+(mouse[0]+offsetL)+"px;top:"+(mouse[1]+offsetT)+"px")
+			 .html(d.properties.name); 
+			 }
       })
       .on("mouseout",  function(d,i) {
         tooltip.classed("hidden", true);
       }); 
-
-
-  //EXAMPLE: adding some capitals from external CSV file
-
 });
 }
-</script>
-<p class="imageLegend"><img src="legend.png" alt="Legend"></p>
 
+
+
+</script>
 </body>
 </html>
