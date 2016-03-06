@@ -1,60 +1,15 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>D3 World Map Template | TechSlides</title>
-<style>
-.country:hover{
-  stroke: #fff;
-  stroke-width: 1.5px;
-}
-
-#container {
-  margin:10px 10%;
-  border:2px solid #000;
-  border-radius: 5px;
-  height:100%;
-  overflow:hidden;
-  background: #F0F8FF;
-}
-.hidden { 
-  display: none; 
-}
-div.tooltip {
-  color: #222; 
-  background: #fff; 
-  padding: .5em; 
-  text-shadow: #f5f5f5 0 1px 0;
-  border-radius: 2px; 
-  box-shadow: 0px 0px 2px 0px #a6a6a6; 
-  opacity: 0.9; 
-  position: absolute;
-}
-.graticule {
-  fill: none;
-  stroke: #bbb;
-  stroke-width: .5px;
-  stroke-opacity: .5;
-}
-.equator {
-  stroke: #ccc;
-  stroke-width: 1px;
-}
-
-h1 {
-    font-size: 200%;
-	text-align:center;
-	text-decoration: underline;
-
-}
-</style>
+<link rel="stylesheet" type="text/css" href="css/terryCSS.css">
 </head>
 <body>
 <h1>Top 20 Countries with the most popular music</h1>
-
-
-  <div id="container"></div>
-
+<div id="container"></div>
 <script src="js/d3.min.js"></script>
 <script src="js/topojson.v1.min.js"></script>
+<script src="//d3js.org/d3.geo.projection.v0.min.js"></script>
+
 <script>
 d3.select(window).on("resize", throttle);
 
@@ -75,9 +30,9 @@ var tooltip = d3.select("#container").append("div").attr("class", "tooltip hidde
 setup(width,height);
 
 function setup(width,height){
-  projection = d3.geo.mercator()
+  projection = d3.geo.kavrayskiy7 ()
     .translate([(width/2), (height/2)])
-    .scale( width / 2 / Math.PI);
+    .scale(width / 6);
 
   path = d3.geo.path().projection(projection);
 
@@ -85,7 +40,6 @@ function setup(width,height){
       .attr("width", width)
       .attr("height", height)
       .call(zoom)
-      .on("click", click)
       .append("g");
 
   g = svg.append("g");
@@ -95,23 +49,10 @@ function setup(width,height){
 d3.json("data/world-topo-min.json", function(error, world) {
 
   var countries = topojson.feature(world, world.objects.countries).features;
-
   topo = countries;
   draw(topo);
 
 });
-
-
-
-
-function redraw() {
-  width = document.getElementById('container').offsetWidth;
-  height = width / 2;
-  d3.select('svg').remove();
-  setup(width,height);
-  draw(topo);
-}
-
 
 function move() {
 
@@ -139,48 +80,12 @@ function move() {
 
 }
 
-
-
 var throttleTimer;
 function throttle() {
   window.clearTimeout(throttleTimer);
     throttleTimer = window.setTimeout(function() {
       redraw();
     }, 200);
-}
-
-
-//geo translation on mouse click in map
-function click() {
-  var latlon = projection.invert(d3.mouse(this));
-  console.log(latlon);
-}
-
-
-
-//function to add points and text to the map (used in plotting capitals)
-function addpoint(lat,lon,text) {
-
-  var gpoint = g.append("g").attr("class", "gpoint");
-  var x = projection([lat,lon])[0];
-  var y = projection([lat,lon])[1];
-
-  gpoint.append("svg:circle")
-        .attr("cx", x)
-        .attr("cy", y)
-        .attr("class","point")
-        .attr("r", 1.5);
-
-  //conditional in case a point has no associated text
-  if(text.length>0){
-
-    gpoint.append("text")
-          .attr("x", x+2)
-          .attr("y", y+2)
-          .attr("class","text")
-          .text(text);
-  }
-
 }
 
 var data2 = [{name:"United Kingdom", country_code: 826, rank: 1},{name:"United States", country_code: 840, rank: 2},{name:"Sweden", country_code: 752, rank: 3},
@@ -199,7 +104,6 @@ function draw(topo) {
      .datum(graticule)
      .attr("class", "graticule")
      .attr("d", path);
-
 
   g.append("path")
    .datum({type: "LineString", coordinates: [[-180, 0], [-90, 0], [0, 0], [90, 0], [180, 0]]})
@@ -224,7 +128,6 @@ function draw(topo) {
                         if (data2CountryCode == jsonCountryCode) {
                             //Copy the data2 rank value into the GeoJSON, with the name "color"
                             json.features[j].properties.color = datarank;
-
                             //Stop looking through the JSON
                             break;
 
@@ -238,7 +141,6 @@ var color = d3.scale.quantize()
 ,"DarkOrange","Coral","Red","OrangeRed","Tomato","Crimson","DarkRed","Brown"])
 .domain([(d3.min(data2, function(d) { return d.rank; })),(d3.max(data2, function(d) { return d.rank; }))
 ]);	
-
          var country = g.selectAll(".country")
                    .data(json.features) //in my example, json.features
                    .enter()
@@ -255,18 +157,15 @@ var color = d3.scale.quantize()
                             //If value exists…
                             return color(value);
                         } else {
-                            //If value is undefined…
-                            return "#ccc";
-                       }
+							//do nothing, leave country as is
+						}
 				
 	  });
 	  
 	  
-  //offsets for tooltips
   var offsetL = document.getElementById('container').offsetLeft+20;
   var offsetT = document.getElementById('container').offsetTop+10;
 
-  //tooltips
   //modified to display rank of country, if it has one, if not, doesnt display any rank
   country
     .on("mousemove", function(d,i) {
@@ -292,5 +191,6 @@ var color = d3.scale.quantize()
 
 
 </script>
+<p id="legend"><img src="images/legend.png" alt="Legend"></p>
 </body>
 </html>
