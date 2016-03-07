@@ -1,0 +1,83 @@
+
+#container {
+  width: 960px;
+  height: auto !important;
+}
+
+  body {
+    font-family: monospace;
+    background-color: #FAE6DE;
+    padding: 0px;
+    margin: 0px;
+    color: #080D16;
+  }
+
+  h1 {
+    padding: 2em 2em 1em 2em ;
+  }
+
+  .axis, .graph_label {
+    font-size: 0.67em;
+    font-family: monospace;
+  }
+  .axis path {
+    fill: none;
+    stroke: black;
+  }
+
+  .rec_axis .tick line {
+    stroke-width: 0.5px;
+    stroke: black;
+  }
+
+  .map_text {
+    font-size: 0.60em;
+  }
+
+  .rec_graph {
+    font-family: 'Helvetica';
+    font-size: 9px;
+  }
+
+  .rec_axis path {
+    fill: none;
+    stroke: #6a6a6a;
+  }
+
+  .small {
+    font-family: monospace;
+    font-size: .5em;
+  }
+
+  .info {
+    /*background-color: #524E4B;*/
+    padding: 6px 12px;
+    width: 270px;
+    margin-left: 6px;
+  }
+
+  #info2 {
+    margin-top: 105px;
+    overflow: auto;
+  }
+
+  ul {
+    padding-left: 22px;
+  }
+
+
+  div {
+    float: left;
+  }
+
+  .flexgraph {
+    display: flex; /* or inline-flex */
+  }
+
+  .artist {
+    color: #394358;
+  }
+
+  .song {
+    color: #B16B56;
+  }
