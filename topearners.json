@@ -1,0 +1,314 @@
+[{
+	"2010":
+		[{
+			"artist":"U2",
+			"moneymade":130000000,
+			"followers": 1264606
+		},
+		{
+			"artist":"AC/DC",
+			"moneymade":114000000,
+			"followers": 1480316
+		},
+		{
+			"artist":"Beyonce",
+			"moneymade":87000000,
+			"followers": 4048275
+		},
+		{
+			"artist":"Bruce Springsteen",
+			"moneymade":70000000,
+			"followers": 947222
+		},
+		{
+			"artist":"Britney Spears",
+			"moneymade":64000000,
+			"followers": 1245200
+		},
+		{
+			"artist":"Jay-Z",
+			"moneymade":63000000,
+			"followers": 1894331
+		},
+		{
+			"artist":"Lady Gaga",
+			"moneymade":62000000,
+			"followers": 1711155
+		},
+		{
+			"artist":"Madonna",
+			"moneymade":58000000,
+			"followers": 1076230
+		},
+		{
+			"artist":"Kenny Chesney",
+			"moneymade":50000000,
+			"followers": 526029
+		},
+		{
+			"artist":"The Black Eyed Peas",
+			"moneymade":48000000,
+			"followers": 974685
+		}
+]},
+{
+	"2011":
+	[{
+		"artist":"U2",
+		"moneymade":195000000,
+		"followers": 1264606
+	},
+	{
+		"artist":"Bon Jovi",
+		"moneymade":125000000,
+		"followers": 892668
+	},
+	{
+		"artist":"Elton John",
+		"moneymade":100000000,
+		"followers": 667742
+	},
+	{
+		"artist":"Lady Gaga",
+		"moneymade":90000000,
+		"followers": 1711155
+	},
+	{
+		"artist":"Michael Buble",
+		"moneymade":70000000,
+		"followers": 1604979
+	},
+	{
+		"artist":"Paul McCartney",
+		"moneymade":67000000,
+		"followers": 594099
+	},
+	{
+		"artist":"The Black Eyed Peas",
+		"moneymade":61000000,
+		"followers": 974685
+	},
+	{
+		"artist":"The Eagles",
+		"moneymade":60000000,
+		"followers": 362377
+	},
+	{
+		"artist":"Justin Bieber",
+		"moneymade":53000000,
+		"followers": 5083178
+	},
+	{
+		"artist":"Dave Matthews Band",
+		"moneymade":51000000,
+		"followers": 463245
+	}
+]},
+{
+	"2012":
+	[{
+		"artist":"Dr. Dre",
+		"moneymade":110000000,
+		"followers": 990330
+	},
+	{
+		"artist":"Roger Waters",
+		"moneymade":88000000,
+		"followers": 101126
+	},
+	{
+		"artist":"Elton John",
+		"moneymade":80000000,
+		"followers": 667742
+	},
+	{
+		"artist":"U2",
+		"moneymade":78000000,
+		"followers": 1264606
+	},
+	{
+		"artist":"Take That",
+		"moneymade":69000000,
+		"followers": 184831
+	},
+	{
+		"artist":"Bon Jovi",
+		"moneymade":60000000,
+		"followers": 892668
+	},
+	{
+		"artist":"Britney Spears",
+		"moneymade":58000000,
+		"followers": 1245200
+	},
+	{
+		"artist":"Paul McCartney",
+		"moneymade":57000000,
+		"followers": 594099
+	},
+	{
+		"artist":"Taylor Swift",
+		"moneymade":57000000,
+		"followers": 4162120
+	},
+	{
+		"artist":"Justin Bieber",
+		"moneymade":55000000,
+		"followers": 5083178
+	}
+]},
+{
+	"2013":
+	[{
+		"artist":"Madonna",
+		"moneymade":125000000,
+		"followers": 1076230
+	},
+	{
+		"artist":"Lady Gaga",
+		"moneymade":80000000,
+		"followers": 1711155
+	},
+	{
+		"artist":"Bon Jovi",
+		"moneymade":79000000,
+		"followers": 892668
+	},
+	{
+		"artist":"Toby Keith",
+		"moneymade":65000000,
+		"followers": 344320
+	},
+	{
+		"artist":"Coldplay",
+		"moneymade":64000000,
+		"followers": 5165559
+	},
+	{
+		"artist":"Bruce Springsteen",
+		"moneymade":62000000,
+		"followers": 947222
+	},
+	{
+		"artist":"Justin Bieber",
+		"moneymade":58000000,
+		"followers": 5083178
+	},
+	{
+		"artist":"Taylor Swift",
+		"moneymade":55000000,
+		"followers": 4162120
+	},
+	{
+		"artist":"Elton John",
+		"moneymade":54000000,
+		"followers": 667742
+	},
+	{
+		"artist":"Beyonce",
+		"moneymade":53000000,
+		"followers": 4048275
+	}
+]},
+{
+	"2014":
+	[
+	{
+		"artist":"Beyonce",
+		"moneymade":115000000,
+		"followers": 4048275
+	},
+	{
+		"artist":"The Eagles",
+		"moneymade":100000000,
+		"followers": 362377
+	},
+	{
+		"artist":"Bon Jovi",
+		"moneymade":82000000,
+		"followers": 892668
+	},
+	{
+		"artist":"Bruce Springsteen",
+		"moneymade":81000000,
+		"followers": 947222
+	},
+	{
+		"artist":"Justin Bieber",
+		"moneymade":81000000,
+		"followers": 5083178
+	},
+	{
+		"artist":"One Direction",
+		"moneymade":75000000,
+		"followers": 4854215
+	},
+	{
+		"artist":"Paul McCartney",
+		"moneymade":71000000,
+		"followers": 594099
+	},
+	{
+		"artist":"Calvin Harris",
+		"moneymade":66000000,
+		"followers": 4341758
+	},
+	{
+		"artist":"Toby Keith",
+		"moneymade":65000000,
+		"followers": 344320
+	}
+]},
+{
+	"2015":
+	[{
+		"artist":"Katy Perry",
+		"moneymade":135000000,
+		"followers": 4331210
+	},
+	{
+		"artist":"One Direction",
+		"moneymade":130000000,
+		"followers": 4854215
+	},
+	{
+		"artist":"Garth Brooks",
+		"moneymade":90000000,
+		"followers": 158105
+	},
+	{
+		"artist":"Taylor Swift",
+		"moneymade":80000000,
+		"followers": 4162120
+	},
+	{
+		"artist":"The Eagles",
+		"moneymade":73500000,
+		"followers": 362377
+	},
+	{
+		"artist":"Calvin Harris",
+		"moneymade":66000000,
+		"followers": 4341758
+	},
+	{
+		"artist":"Justin Timberlake",
+		"moneymade":63500000,
+		"followers": 1951967
+	},
+	{
+		"artist":"P Diddy",
+		"moneymade":60000000,
+		"followers": 105474
+	},
+	{
+		"artist":"Fleetwood Mac",
+		"moneymade":59500000,
+		"followers": 753461
+	},
+	{
+		"artist":"Lady Gaga",
+		"moneymade":59000000,
+		"followers": 1711155
+	}
+]}]
