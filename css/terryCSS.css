@@ -11,9 +11,23 @@
   overflow:hidden;
   background: #F0F8FF;
 }
+
+/*#container path {
+  fill : none;
+}*/
+
+path.country {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: .5px;
+  stroke-linejoin: round;
+}
+
+
 .hidden { 
   display: none; 
 }
+
 div.tooltip {
   color: #222; 
   background: #fff; 

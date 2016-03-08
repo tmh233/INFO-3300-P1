@@ -18,7 +18,6 @@
 
   var tooltip = d3.select("#container").append("div").attr("class", "tooltip hidden");
 
-
   var setup = function (width,height){
 
     projection = d3.geo.kavrayskiy7 ()
@@ -193,5 +192,4 @@ function draw() {
   });
 
 }
-
 
