@@ -1,0 +1,11 @@
+body {
+  font-family: "Open Sans"; 
+  font-size: 12px;
+} 
+
+div { margin: 30px; } 
+svg.bordered { border: solid black 1px; }
+.axis path { fill: none; stroke: black; }
+.axis line { stroke: black; }
+.axis text { font-size: 10px;  }
+#title{position: absolute; top: 30; left: 600; width: 1200px; height: 100px;}

@@ -2,48 +2,97 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
-  <!-- <link rel="stylesheet" href="css/kevin.css"> -->
+  <link rel="stylesheet" href="css/kevin.css">
   <link rel="stylesheet" type="text/css" href="css/terryCSS.css">
-
+  <link rel="stylesheet" href="css/greg.css">
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  
+  <!-- KEVIN's CHART -->
 
-  <div id="out1"></div>
-
-  <!-- <div id="out1"></div> -->
-  <h1>How big is the musical 1%?</h1>
-
-  <!-- KEVIN'S CHART -->
-  <div class="flexgraph">
-    <div id="out2"></div>
-    <div id="info2" class="info">
-      <h3>Fewer songs/artists make big.</h3>
-      <p>The billboard Hot-100 features 5200 different songs in a year. How many different songs "make it", however? The overal trend is ever less big-name-artists dominate the charts.</p>
-      <p>On the left, 56 years of billboard data on unique song/artist counts per year.</p>
-      <p id="out2key"></p>
-      <h4>Note how...</h4>
-      <ul>
-        <li>... the 60s saw the most fluent charts. In '67, <span class="song">827</span> different songs made it. That's more than double the measly <span class="song">406</span> charted in 1994.</li>
-        <li>... 1970 had <span class="artist">423</span> different top performers; last year it was only <span class="artist">346</span>.
-        </li>
-        <li>... the 90s were the decade of a few mainstream bangers. Only <span class="artist">291</span> different artists charted in '92; an all-time low.</li>
-      </ul>
+  <p>
+    <h1>How big is the musical 1%?</h1>
+    <div class="flexgraph">
+      <div id="out2"></div>
+      <div id="info2" class="info">
+        <h3>Fewer songs/artists make big.</h3>
+        <p>The billboard Hot-100 features 5200 different songs in a year. How many different songs "make it", however? The overal trend is ever less big-name-artists dominate the charts.</p>
+        <p>On the left, 56 years of billboard data on unique song/artist counts per year.</p>
+        <p id="out2key"></p>
+        <h4>Note how...</h4>
+        <ul>
+          <li>... the 60s saw the most fluent charts. In '67, <span class="song">827</span> different songs made it. That's more than double the measly <span class="song">406</span> charted in 1994.</li>
+          <li>... 1970 had <span class="artist">423</span> different top performers; last year it was only <span class="artist">346</span>.
+          </li>
+          <li>... the 90s were the decade of a few mainstream bangers. Only <span class="artist">291</span> different artists charted in '92; an all-time low.</li>
+        </ul>
+      </div>
     </div>
-  </div>
+    <!-- <div id="out1"></div> -->
+  </p>
+
+
+  <!-- GREG's CHART -->
+  <script scr="js/greg.js"></script>
+
+  <p>
+    <div id="graph">
+      <!-- Inspired by kenlimmj.github.io/cs3300/life_expectancy/ -->   
+      <div class="flexgraph">
+        <h1>Artist Revenue vs. Popularity</h1>
+        <span>The size of the circle reflects the number of followers the artist has on Spotify and the brightness of the circles indicates the amount of revenue earned.</span>
+      </div>
+     
+    </div>
+  </p>
+
 
   <!-- TERRY'S CHART -->
-  <div>
-    <h1>Top 20 Countries with the most popular music</h1>
-    <div class="flexgraph">
-      <div id="blurb" class="blurb">
-        This map displays the 20 Countries that have the most popular music. They are arranged in ranks, you can see the rank of a country by hovering your mouse over that specific country, and if it shows no rank, then that country is not in the Top 20.
+  <p>
+    <div>
+      <h1>Top 20 Countries with the most popular music</h1>
+      <div class="flexgraph">
+        <div id="blurb" class="blurb">
+          This map displays the 20 Countries that have the most popular music. They are arranged in ranks, you can see the rank of a country by hovering your mouse over that specific country, and if it shows no rank, then that country is not in the Top 20.
+          <svg width="400" height="300">
+            <text x="170" y="20" fill="black">Legend</text>
+            <text x="170" y="45" fill="black">Not Ranked</text>
+            <rect x="140" y="35" height="10" width="20" fill="black"/>
+            <text x="330" y="140" fill="black">1 (Best)</text>
+            <text x="20" y="140" fill="black">20 (Worst)</text>
+            <rect x="360" y="60" height="60" width="20" fill="green"/>
+            <rect x="340" y="60" height="60" width="20" fill="limegreen"/>
+            <rect x="320" y="60" height="60" width="20" fill="lightgreen"/>
+            <rect x="300" y="60" height="60" width="20" fill="lawngreen"/>
+            <rect x="280" y="60" height="60" width="20" fill="greenyellow"/>
+            <rect x="260" y="60" height="60" width="20" fill="yellow"/>
+            <rect x="240" y="60" height="60" width="20" fill="gold"/>
+            <rect x="220" y="60" height="60" width="20" fill="goldenrod"/>
+            <rect x="200" y="60" height="60" width="20" fill="darkgoldenrod"/>
+            <rect x="180" y="60" height="60" width="20" fill="orange"/>
+            <rect x="160" y="60" height="60" width="20" fill="darkorange"/>
+            <rect x="140" y="60" height="60" width="20" fill="coral"/>
+            <rect x="120" y="60" height="60" width="20" fill="red"/>
+            <rect x="100" y="60" height="60" width="20" fill="orangered"/>
+            <rect x="80" y="60" height="60" width="20" fill="tomato"/>
+            <rect x="60" y="60" height="60" width="20" fill="crimson"/>
+            <rect x="40" y="60" height="60" width="20" fill="darkred"/>
+            <rect x="20" y="60" height="60" width="20" fill="brown"/>
+          </svg>
+        </div>
+        <div id="container"></div>
+
       </div>
-      <img src="images/picker.png" width='500px' alt="Legend">
+      
+
 
     </div>
-    <div id="container"></div>
 
-  </div>
+  </p>
+
+
 
  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
@@ -53,6 +102,7 @@
 
   <script src="js/terry.js"></script>
   <script src="js/kevin.js"></script>
-  <script src="js/artist_line.js"></script>
+  <script src="js/greg.js"></script>
+  <!-- <script src="js/artist_line.js"></script> -->
 </body>
 </html>

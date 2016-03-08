@@ -145,6 +145,7 @@ BucketObject.prototype.map = function(cb) {
   var svg = d3
         .select("#out2")
         .append("svg")
+        .attr("class", "bordered")
         .attr("width", 960)
         .attr("height", 1080),
 
