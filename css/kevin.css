@@ -10,6 +10,11 @@
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
 
+#everything {
+  width: 1280px;
+
+}
+
 #container {
   width: 960px;
 }

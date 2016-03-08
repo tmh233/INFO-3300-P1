@@ -126,9 +126,9 @@
           }
       }
     
-      var colors = ["Lime","GreenYellow","LawnGreen","LightGreen","LimeGreen","Green",
+      var colors = ["Red","GreenYellow","LawnGreen","LightGreen","LimeGreen","Green",
       "DarkGreen","Yellow","Gold","GoldenRod","DarkGoldenRod","Orange","DarkOrange",
-      "Coral","Red","OrangeRed","Tomato","Crimson","DarkRed","Brown"];
+      "Coral","Red","OrangeRed","Tomato","Crimson","DarkRed","DarkRed"];
       
       var color_scale = d3.scale.quantize().range(colors)
         .domain([(d3.min(data2, function(d) { return d.rank; })),
