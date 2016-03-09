@@ -12,14 +12,21 @@
 
 #everything {
   width: 1280px;
+}
 
+span {
+  display: inline-block;
 }
 
 #container {
   width: 960px;
 }
+div {
+  text-align: left;
+}
 
   body {
+    text-align: center;
     font-family: monospace;
     background-color: #FAE6DE;
     padding: 0px;
@@ -27,8 +34,19 @@
     color: #080D16;
   }
 
-  h1 {
+  h2 {
+    text-decoration: underline;
     padding: 2em 2em 1em 2em ;
+    font-size: 3em;
+
+  }
+  h3 {
+    text-align: center;
+  }
+  h1 {
+    font-size: 5em;
+    text-align:center;
+    text-decoration: underline;
   }
 
   .axis, .graph_label {
@@ -80,14 +98,15 @@
     padding-left: 22px;
   }
 
-
   div {
-    float: left;
+    padding: 0;
+    margin: 12px;
   }
 
   .flexgraph {
     display: flex; /* or inline-flex */
     width: 1280px;
+    /*margin: 30px;*/
   }
 
   .artist {

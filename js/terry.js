@@ -11,7 +11,7 @@
         .on("zoom", move);
 
 
-    var width = 960;
+    var width = 900;
     var height = width / 2;
 
     var topo,projection,path,svg,g;
@@ -126,13 +126,11 @@
           }
       }
     
-      var colors = ["Red","GreenYellow","LawnGreen","LightGreen","LimeGreen","Green",
-      "DarkGreen","Yellow","Gold","GoldenRod","DarkGoldenRod","Orange","DarkOrange",
-      "Coral","Red","OrangeRed","Tomato","Crimson","DarkRed","DarkRed"];
+      var colors = ["#3BFF54","#08240C"];
       
-      var color_scale = d3.scale.quantize().range(colors)
+      var color_scale = d3.scale.linear()
         .domain([(d3.min(data2, function(d) { return d.rank; })),
-                 (d3.max(data2, function(d) { return d.rank; }))]); 
+                 (d3.max(data2, function(d) { return d.rank; }))]).range(colors); 
       
       // svg.append("path")
       //    .datum(graticule)
@@ -150,10 +148,10 @@
         .append("path")
         .attr("d", path)
 
-        .on("click", function(d){
-          console.log("Population for " + d.properties.name + " is " + 
-                       d.properties.pop_est + " as of " + d.properties.lastcensus);
-        })
+        // .on("click", function(d){
+        //   console.log("Population for " + d.properties.name + " is " + 
+        //                d.properties.pop_est + " as of " + d.properties.lastcensus);
+        // })
         .style("fill", function(d) {
 
           if (d.properties.name === 'Antarctica') return 'none';
@@ -164,7 +162,7 @@
             //If value exists…
             return color_scale(value);
           } else {
-            return 'black';
+            return '#524E4B';
             //do nothing, leave country as is
           }
       

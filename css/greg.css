@@ -1,9 +1,8 @@
 body {
   font-family: "Open Sans"; 
   font-size: 12px;
-} 
+}
 
-div { margin: 30px; } 
 svg.bordered { border: solid black 1px; }
 .axis path { fill: none; stroke: black; }
 .axis line { stroke: black; }

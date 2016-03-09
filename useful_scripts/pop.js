@@ -2,7 +2,19 @@
 /* global console, JSON, require */
 var spotify = require('spotify');
 
-var arr = ["The Rolling Stones","U2","Kenny Chesney","Green Day","The Eagles","Paul McCartney","Celine Dion","50 Cent","Dave Matthews Band","Elton John","Tim McGraw","Rascal Flatts","Madonna","Barbra Streisand ","Bon Jovi","Nickelback","Jay-Z","P Diddy","The Police","Beyonce","Toby Keith","Justin Timberlake","Van Halen","Genesis","Gwen Stefani","Bruce Springsteen","Coldplay","AC/DC","Eagles","Britney Spears","Jay Z","Lady Gaga","Black Eyed Peas & Coldplay & Toby Keith (Tie)","Michael Buble","The Black Eyed Peas","Justin Bieber","Dave Matthews band","Dr. Dre","Roger Waters","Take That","Paul McCartney & Taylor Swift (Tie)","Justin Bieber & Toby Keith (Tie)","Taylor Swift","One Direction","Calvin Harris","Katy Perry","Garth Brooks","Fleetwood Mac"]
+var arr = [
+"Foo Fighters",
+"Tim McGraw",
+"David Guetta",
+"Florida Georgia Line",
+"Jimmy Buffett",
+"Tiesto",
+"Maroon 5",
+"Dr. Dre"
+]
+
+
+// ["The Rolling Stones","U2","Kenny Chesney","Green Day","The Eagles","Paul McCartney","Celine Dion","50 Cent","Dave Matthews Band","Elton John","Tim McGraw","Rascal Flatts","Madonna","Barbra Streisand ","Bon Jovi","Nickelback","Jay-Z","P Diddy","The Police","Beyonce","Toby Keith","Justin Timberlake","Van Halen","Genesis","Gwen Stefani","Bruce Springsteen","Coldplay","AC/DC","Eagles","Britney Spears","Jay Z","Lady Gaga","Black Eyed Peas & Coldplay & Toby Keith (Tie)","Michael Buble","The Black Eyed Peas","Justin Bieber","Dave Matthews band","Dr. Dre","Roger Waters","Take That","Paul McCartney & Taylor Swift (Tie)","Justin Bieber & Toby Keith (Tie)","Taylor Swift","One Direction","Calvin Harris","Katy Perry","Garth Brooks","Fleetwood Mac"]
 .reduce(function (acc, x) {
   if (acc.indexOf(x) < 0) acc.push(x);
   return acc;
@@ -32,7 +44,7 @@ Promise.all(arr).then(function (searches) {
   });
 })
 .then(function (artists) {
-  console.log(JSON.stringify(artists));
+  console.log(artists);
 })
 .catch(console.trace)
 

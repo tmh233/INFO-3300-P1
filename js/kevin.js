@@ -164,8 +164,9 @@ BucketObject.prototype.map = function(cb) {
       rows    = 8,
       cols    = 8,
 
-      artist_color = '#394358',
-      song_color = '#B16B56',
+      artist_color = '#0b4404',
+      song_color = '#22cc0d',
+
 
       text_color = '#080D16',
 

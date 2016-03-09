@@ -9,15 +9,19 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  
-  <!-- KEVIN's CHART -->
 
   <p>
-    <h1>How big is the musical 1%?</h1>
+    <h1>An exploration on top musicians.</h1>
+    <h3 class="gray">Kevin Hernandez (keh222), Terry (), Gregory Clerie (gec73)</h3>
+  </p>
+    
+  <!-- KEVIN's CHART -->
+
+  <span>
     <div class="flexgraph">
       <div id="out2"></div>
       <div id="info2" class="info">
-        <h3>Fewer songs/artists make big.</h3>
+        <h3>How big is the musical 1%?</h3>
         <p>The billboard Hot-100 features 5200 different songs in a year. How many different songs "make it", however? The overal trend is ever less big-name-artists dominate the charts.</p>
         <p>On the left, 56 years of billboard data on unique song/artist counts per year.</p>
         <p id="out2key"></p>
@@ -30,42 +34,41 @@
         </ul>
       </div>
     </div>
-    <!-- <div id="out1"></div> -->
-  </p>
+    <div id="out1"></div>
+  </span>
 
 
   <!-- GREG's CHART -->
   <script scr="js/greg.js"></script>
 
   <p>
-    <div id="graph">
+    <div class="flexgraph">
       <!-- Inspired by kenlimmj.github.io/cs3300/life_expectancy/ -->   
-      <div class="flexgraph">
-        <h1>Artist Revenue vs. Popularity</h1>
-        <div>
-          The size of the circle reflects the number of followers the artist has on Spotify and the brightness of the circles indicates the amount of revenue earned.
-          <svg width="500" height="200">
-            <text x="110" y="60" fill="black">Radius Size = Popularity</text>
-            <text x="280" y="180" fill="black">135M (Highest)</text>
-            <text x="20" y="180" fill="black">48M (Lowest)</text>
-            <rect x="320" y="90" height="60" width="20" fill="#2bff10"/>
-            <rect x="300" y="90" height="60" width="20" fill="#23ce0d"/>
-            <rect x="280" y="90" height="60" width="20" fill="#23ce0d"/>
-            <rect x="260" y="90" height="60" width="20" fill="#188d09"/>
-            <rect x="240" y="90" height="60" width="20" fill="#147a08"/>
-            <rect x="220" y="90" height="60" width="20" fill="#137507"/>
-            <rect x="200" y="90" height="60" width="20" fill="#105f06"/>
-            <rect x="180" y="90" height="60" width="20" fill="#0e5506"/>
-            <rect x="160" y="90" height="60" width="20" fill="#0d4e05"/>
-            <rect x="140" y="90" height="60" width="20" fill="#0c4905"/>
-            <rect x="120" y="90" height="60" width="20" fill="#0c4805"/>
-            <rect x="100" y="90" height="60" width="20" fill="#0c4705"/>
-            <rect x="80" y="90" height="60" width="20" fill="#0b4404"/>
-            <rect x="60" y="90" height="60" width="20" fill="#0a3d04"/>
-            <rect x="40" y="90" height="60" width="20" fill="#072c03"/>
-          </svg>
-        </div>
-      </div>
+      <div id="graph"></div>
+          <div>
+            <h3>Artist Revenue vs. Popularity</h3>
+            <svg width="365" height="200">
+              <text x="110" y="60" fill="black">Radius Size = Popularity</text>
+              <text x="280" y="180" fill="black">135M (Highest)</text>
+              <text x="20" y="180" fill="black">48M (Lowest)</text>
+              <rect x="320" y="90" height="60" width="20" fill="#2bff10"/>
+              <rect x="300" y="90" height="60" width="20" fill="#27e70f"/>
+              <rect x="280" y="90" height="60" width="20" fill="#22cc0d"/>
+              <rect x="260" y="90" height="60" width="20" fill="#188d09"/>
+              <rect x="240" y="90" height="60" width="20" fill="#147a08"/>
+              <rect x="220" y="90" height="60" width="20" fill="#137507"/>
+              <rect x="200" y="90" height="60" width="20" fill="#105f06"/>
+              <rect x="180" y="90" height="60" width="20" fill="#0e5506"/>
+              <rect x="160" y="90" height="60" width="20" fill="#0d4e05"/>
+              <rect x="140" y="90" height="60" width="20" fill="#0c4905"/>
+              <rect x="120" y="90" height="60" width="20" fill="#0c4805"/>
+              <rect x="100" y="90" height="60" width="20" fill="#0c4705"/>
+              <rect x="80" y="90" height="60" width="20" fill="#0b4404"/>
+              <rect x="60" y="90" height="60" width="20" fill="#0a3d04"/>
+              <rect x="40" y="90" height="60" width="20" fill="#072c03"/>
+            </svg>
+            The size of the circle reflects the number of followers the artist has on Spotify and the brightness of the circles indicates the amount of revenue earned.
+          </div>
     </div>
 
   </p>
@@ -74,44 +77,41 @@
   <!-- TERRY'S CHART -->
   <p>
     <div>
-      <h1>Top 20 Countries with the most popular music</h1>
       <div class="flexgraph">
         <div id="blurb" class="blurb">
+          <h3>Top 20 Countries with the most popular music</h3>
+
           This map displays the 20 Countries that have the most popular music. They are arranged in ranks, you can see the rank of a country by hovering your mouse over that specific country, and if it shows no rank, then that country is not in the Top 20.
-          <svg width="400" height="300">
-            <text x="170" y="20" fill="black">Legend</text>
-            <text x="170" y="45" fill="black">Not Ranked</text>
-            <rect x="140" y="35" height="10" width="20" fill="black"/>
-            <text x="330" y="140" fill="black">1 (Best)</text>
+          <svg width="420" height="300">
+            <text x="190" y="45" fill="black">Not Ranked</text>
+            <rect x="160" y="35" height="10" width="20" fill="#524E4B"/>
+            <text x="375" y="140" fill="black">1 (Best)</text>
             <text x="20" y="140" fill="black">20 (Worst)</text>
-            <rect x="360" y="60" height="60" width="20" fill="green"/>
-            <rect x="340" y="60" height="60" width="20" fill="limegreen"/>
-            <rect x="320" y="60" height="60" width="20" fill="lightgreen"/>
-            <rect x="300" y="60" height="60" width="20" fill="lawngreen"/>
-            <rect x="280" y="60" height="60" width="20" fill="greenyellow"/>
-            <rect x="260" y="60" height="60" width="20" fill="yellow"/>
-            <rect x="240" y="60" height="60" width="20" fill="gold"/>
-            <rect x="220" y="60" height="60" width="20" fill="goldenrod"/>
-            <rect x="200" y="60" height="60" width="20" fill="darkgoldenrod"/>
-            <rect x="180" y="60" height="60" width="20" fill="orange"/>
-            <rect x="160" y="60" height="60" width="20" fill="darkorange"/>
-            <rect x="140" y="60" height="60" width="20" fill="coral"/>
-            <rect x="120" y="60" height="60" width="20" fill="red"/>
-            <rect x="100" y="60" height="60" width="20" fill="orangered"/>
-            <rect x="80" y="60" height="60" width="20" fill="tomato"/>
-            <rect x="60" y="60" height="60" width="20" fill="crimson"/>
-            <rect x="40" y="60" height="60" width="20" fill="darkred"/>
-            <rect x="20" y="60" height="60" width="20" fill="brown"/>
+            <rect x="400" y="60" height="60" width="20" fill="#3bff54"/>
+            <rect x="380" y="60" height="60" width="20" fill="#38f350"/>
+            <rect x="360" y="60" height="60" width="20" fill="#36e84c"/>
+            <rect x="340" y="60" height="60" width="20" fill="#33dc49"/>
+            <rect x="320" y="60" height="60" width="20" fill="#30d145"/>
+            <rect x="300" y="60" height="60" width="20" fill="#2ec541"/>
+            <rect x="280" y="60" height="60" width="20" fill="#2bba3d"/>
+            <rect x="260" y="60" height="60" width="20" fill="#28ae39"/>
+            <rect x="240" y="60" height="60" width="20" fill="#26a336"/>
+            <rect x="220" y="60" height="60" width="20" fill="#239732"/>
+            <rect x="200" y="60" height="60" width="20" fill="#208c2e"/>
+            <rect x="180" y="60" height="60" width="20" fill="#1d802a"/>
+            <rect x="160" y="60" height="60" width="20" fill="#1b7527"/>
+            <rect x="140" y="60" height="60" width="20" fill="#186923"/>
+            <rect x="120" y="60" height="60" width="20" fill="#155e1f"/>
+            <rect x="100" y="60" height="60" width="20" fill="#13521b"/>
+            <rect x="80" y="60" height="60" width="20" fill="#104717"/>
+            <rect x="60" y="60" height="60" width="20" fill="#0d3b14"/>
+            <rect x="40" y="60" height="60" width="20" fill="#0b3010"/>
+            <rect x="20" y="60" height="60" width="20" fill="#08240c"/>
           </svg>
         </div>
         <div id="container"></div>
-
       </div>
-      
-
-
     </div>
-
   </p>
 
 

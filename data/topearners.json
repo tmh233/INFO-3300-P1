@@ -310,5 +310,110 @@
 		"artist":"Lady Gaga",
 		"moneymade":59000000,
 		"followers": 1711155
-	}
-]}]
+	},
+	{
+		"artist":"The Rolling Stones",
+		"moneymade": 57500000,
+		"followers": 1500670
+	},
+	{
+		"artist":"Ed Sheeran",
+		"moneymade": 57000000,
+		"followers": 5675676
+	},
+	{
+		"artist":"Jay Z",
+		"moneymade": 56000000,
+		"followers": 1896912
+	},
+	{
+		"artist":"Beyonce",
+		"moneymade": 54500000,
+		"followers": 4059081
+	},
+	{
+		"artist":"Elton John",
+		"moneymade": 53500000,
+		"followers": 669183
+	},
+	{
+		"artist":"Toby Keith",
+		"moneymade": 53000000,
+		"followers": 344629
+	},
+	{
+		"artist":"Paul McCartney",
+		"moneymade": 51500000,
+		"followers": 594738
+	},
+	{
+		"artist":"Michael Buble",
+		"moneymade": 45500000,
+		"followers": 1606148
+	},
+	{
+		"artist":"Jason Aldean",
+		"moneymade": 43500000,
+		"followers": 871804
+	},
+	{
+		"artist":"Luke Bryan",
+		"moneymade": 42500000,
+		"followers": 1089043
+	},
+	{
+		"artist":"Kenny Chesney",
+		"moneymade": 42000000,
+		"followers": 526607
+	},
+	{
+		"artist":"Bruno Mars",
+		"moneymade": 40000000,
+		"followers": 4212941
+	},
+	{
+		"artist":"Drake",
+		"moneymade": 39500000,
+		"followers": 5084245
+	},
+	{
+		"artist":"Foo Fighters",
+		"moneymade": 38000000,
+		"followers": 1817957
+	},
+	{
+		"artist":"Tim McGraw",
+		"moneymade": 38000000,
+		"followers": 449238
+	},
+	{
+		"artist":"David Guetta",
+		"moneymade": 37000000,
+		"followers": 7505710
+	},
+	{
+		"artist":"Florida Georgia Line",
+		"moneymade": 36500000,
+		"followers": 482836
+	},
+	{
+		"artist":"Jimmy Buffett",
+		"moneymade": 36000000,
+		"followers": 88982
+	},
+	{
+		"artist":"Tiesto",
+		"moneymade": 36000000,
+		"followers": 1193605
+	},
+	{
+		"artist":"Maroon 5",
+		"moneymade": 33000000,
+		"followers": 6538312
+	},
+	{
+		"artist":"Dr. Dre",
+		"moneymade": 33000000,
+		"followers": 993138
+	}]}
+]
