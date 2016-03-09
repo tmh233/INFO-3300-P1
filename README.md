@@ -1,3 +1,4 @@
 # INFO-3300-P1
 
-Open index.html
+Visualization: index.html
+Writeup: writeup.pdf
