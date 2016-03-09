@@ -9,13 +9,22 @@
 * html .clearfix             { zoom: 1; } /* IE6 */
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
-
-#everything {
-  width: 1280px;
+.space {
+  height: 60px
 }
 
-span {
+.section {
   display: inline-block;
+  margin: 0 auto;
+  padding-right: 20px;
+}
+
+#out2 {
+  margin-left:0px;
+}
+
+#graph {
+  margin-left: 6px;
 }
 
 #container {
@@ -85,13 +94,16 @@ div {
   .info {
     /*background-color: #524E4B;*/
     padding: 6px 12px;
-    width: 270px;
+    /*width: 270px;*/
     margin-left: 6px;
   }
 
   #info2 {
     margin-top: 105px;
-    overflow: auto;
+  }
+
+  #info3 {
+    margin-top: 85px;
   }
 
   ul {
@@ -105,14 +117,22 @@ div {
 
   .flexgraph {
     display: flex; /* or inline-flex */
+    width: 1380px;
+    /*margin: 30px;*/
+  }
+
+  .flexgraph.smaller {
+    margin-top: 110px;
+    margin-bottom: 120px;
+    display: flex; /* or inline-flex */
     width: 1280px;
     /*margin: 30px;*/
   }
 
   .artist {
-    color: #394358;
+    color: #0d4e05;
   }
 
   .song {
-    color: #B16B56;
+    color: #188d09;
   }

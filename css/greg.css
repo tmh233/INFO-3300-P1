@@ -3,7 +3,7 @@ body {
   font-size: 12px;
 }
 
-svg.bordered { border: solid black 1px; }
+svg.bordered { border: solid black 0px; }
 .axis path { fill: none; stroke: black; }
 .axis line { stroke: black; }
 .axis text { font-size: 10px;  }

@@ -35,105 +35,6 @@ BucketObject.prototype.map = function(cb) {
 };
 
 /**
- * First graph 1958-08-09 - 2016-03-05
- */
-
-// (function () { /** to keep our global scope clean. */
-
-//   /** Setup */
-//   var svg  = d3
-//         .select("#out1")
-//         .append("svg")
-//         .attr("width", 20080)
-//         .attr("height", 580),
-
-//       swdth = svg.attr('width'),
-//       shght = svg.attr('height'),
-
-//       on_svg = appended_to(svg),
-
-//       padding = 25,
-
-//       start_date = new Date('1958-08-09'),
-//       end_date   = new Date('2016-03-05');
-
-//   console.log(start_date, end_date);
-
-
-
-//   var xScale = d3.time.scale()
-//               .domain([start_date, end_date])
-//               .range([padding, (swdth - padding)]);
-//   var yScale = d3.scale.linear()
-//               .domain([0, 100])
-//               .range([(shght - padding), padding]);
-
-//   var xAxis = d3.svg.axis()
-//     .scale(xScale).orient("bottom").ticks(10);
-
-//   var yAxis = d3.svg.axis()
-//     .scale(yScale).orient("left").ticks(5);
-  
-//   svg
-//     .append("g")
-//     .attr("transform", "translate(0," + (svg.attr('height') - padding) + ")")
-//     .attr("class", "axis")
-//     .call(xAxis);
-
-//   svg
-//     .append("g")
-//     .attr("transform", "translate(" + padding + ",0)")
-//     .attr("class", "axis")
-//     .call(yAxis);
-
-
-//   on_svg({
-//     'append' : 'circle',
-//     'cx'     : xScale(new Date('2006-01-05')),
-//     'cy'     : yScale(30),
-//     'r'      : 3,
-//     'fill'   : '#FF3300',
-//     'stroke' : '#BB2200',
-//     'stroke-width' : '1px'
-//   });
-
-
-//   d3.json("data/songtrack.json", function(err, song_arr) {
-//     if (err) return console.trace(err);
-
-//     // We have too much data
-//     // var song_arr = song_arr.slice(0, 2000);
-  
-//     var song_arr = [song_arr[0]]
-
-//     song_arr.forEach(function (song) {
-
-//       song.ranks.map(function (rank) {
-//         rank.date = new Date(rank.date);
-//         return rank;
-//       });
-
-//       var line = d3.svg.line()
-//           .x(function(rank) { return xScale(rank.date); })
-//           .y(function(rank) { return yScale(rank.rank); })
-//           .interpolate("basis");
-
-//       on_svg({
-//         'append' : 'path',
-//         'd' : line(song.ranks),
-//         'stroke' : 'red',
-//         'stroke-width' : 2,
-//         'fill' : 'none',
-//         'opacity': 0.25
-//       });
-
-//     });
-//   });
-// }) //();
-
-
-
-/**
  * Graph: Charts yoy 1959 - 2015
  */
 
@@ -146,8 +47,8 @@ BucketObject.prototype.map = function(cb) {
         .select("#out2")
         .append("svg")
         .attr("class", "bordered")
-        .attr("width", 960)
-        .attr("height", 1080),
+        .attr("width", 900)
+        .attr("height", 900),
 
       key_svg = d3
         .select("#out2key")
@@ -170,12 +71,13 @@ BucketObject.prototype.map = function(cb) {
 
       text_color = '#080D16',
 
-      padding = 85,
+      padding = 84,
+      padd_y = 50,
 
       num_positions = 1000,
 
       key_height = key_svg.attr('height'),
-      key_rows = 2, key_cols = 4, key_padding = 10,
+      key_rows = 2, key_cols = 4, key_padding = 12,
 
       key_xScale = d3.scale.linear()
               .domain([0, (key_cols - 1)])
@@ -190,7 +92,7 @@ BucketObject.prototype.map = function(cb) {
               .range([padding, (swdth - padding)]);
   var yScale = d3.scale.linear()
               .domain([0, (rows - 1)])
-              .range([padding, (shght - padding)]);
+              .range([padd_y, (shght - padd_y)]);
 
   d3.json("data/yeartrack.json", function(err, data) {
     if (err) return console.trace(err);
@@ -200,7 +102,7 @@ BucketObject.prototype.map = function(cb) {
 
     var yBands = d3.scale.ordinal()
       .domain(year_arr.map(function (year) { return year.year; }))
-      .rangeBands([padding, shght-padding], 0.3);
+      .rangeBands([padd_y, shght-padd_y], 0.3);
 
     // Artist key 
 
@@ -218,7 +120,7 @@ BucketObject.prototype.map = function(cb) {
       'alignment-baseline' : 'ideographic',
       'text' : "# Distinct artists",
       'x' : key_xScale(2.9),
-      'y' : key_yScale(1),
+      'y' : key_yScale(1.17),
       'fill' : text_color
     });
 
@@ -238,7 +140,7 @@ BucketObject.prototype.map = function(cb) {
       'alignment-baseline' : 'ideographic',
       'text' : "# Distinct songs",
       'x' : key_xScale(2.9),
-      'y' : key_yScale(0),
+      'y' : key_yScale(0.17),
       'fill' : text_color
     });
 
@@ -255,25 +157,36 @@ BucketObject.prototype.map = function(cb) {
 
     svg
       .append("g")
-      .attr("transform", "translate(0," + (xScale(0)) + ")")
-      .attr("class", "rec_axis")
+      .attr("transform", "translate(0," + (yScale(0)) + ")")
+      .attr("class", "axis")
       .call(xAxis);
 
     svg
       .append("g")
       .attr("transform", "translate(" + padding + ",0)")
-      .attr("class", "rec_axis")
+      .attr("class", "axis")
       .call(yAxis);
 
     on_svg({
       'append' : 'text',
       'text-anchor' : 'start',
       'alignment-baseline' : 'ideographic',
-      'text' : "Billboard today sees more of the same songs/artits",
-      'x' : xScale(600),
+      'text' : "Billboard lately sees more of the same songs & artists",
+      'x' : xScale(630),
       'y' : yBands('2003'),
       'fill' : text_color
     });
+
+    on_svg({
+      'append' : 'text',
+      'text-anchor' : 'start',
+      'alignment-baseline' : 'ideographic',
+      'text' : "than it did before.",
+      'x' : xScale(630),
+      'y' : yBands('2004'),
+      'fill' : text_color
+    });
+
 
 
 

@@ -18,7 +18,7 @@
   var g = svg.append("g");
   var formatValue = d3.format(".2s");
   var xAxis = d3.svg.axis().scale(xScale).orient("bottom").ticks(7).tickFormat(function(d) { return formatValue(d).replace('G', 'B'); });
-  var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10 , d3.format(",d")).tickFormat(function(d) { return formatValue(d).replace('G', 'B'); });
+  var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10 , d3.format(",d")).tickFormat(function(d) { return "$" + formatValue(d).replace('G', 'B'); });
 
   svg.append("g").attr("class", "axis")
   .attr("transform", "translate(0,"+ 720 +")")
@@ -29,7 +29,7 @@
 
   svg.append("text")
   .attr("x", 450)
-  .attr("y", 780)
+  .attr("y", 770)
   .text("Followers on Spotify");
 
   svg.append("text")
@@ -37,6 +37,40 @@
   .attr("y", 20)
   .attr("transform", "rotate(-90)")
   .text("Money Made (Millions)");
+
+
+  // "artist":"Katy Perry",
+  // "moneymade":135000000,
+  // "followers": 4331210
+
+  var dotted_begin = 800000
+
+  svg.append("line")
+  .attr("x1", xScale(dotted_begin))
+  .attr("y1", yScale(135000000))
+  .attr("x2", xScale(3600000))
+  .attr("y2", yScale(135000000))
+  .attr("stroke-width", 1)
+  .attr("stroke", 'black')
+  .style("stroke-dasharray", ("1, 3"))
+
+  svg.append("line")
+  .attr("x1", xScale(5800000))
+  .attr("y1", yScale(135000000))
+  .attr("x2", xScale(9000000))
+  .attr("y2", yScale(135000000))
+  .attr("stroke-width", 1)
+  .attr("stroke", 'black')
+  .style("stroke-dasharray", ("1, 3"))
+
+
+
+  svg.append("text")
+  .attr("x", xScale(dotted_begin))
+  .attr("y", yScale(135000000) - 6)
+  .text("$135 million");
+
+  135000000
 
   d3.json("data/topearners.json", function(error, json) {
     if (error) return console.warn(error);
@@ -48,7 +82,7 @@
         artistData.moneymade=artistData[5][2015][k].moneymade;
         artistData.artist=artistData[5][2015][k].artist;
 
-        var circles = svg.append("circle");
+        var circles = g.append("circle");
 
         circles.attr("cx", xScale(artistData.followers) )
         .attr("cy", yScale(artistData.moneymade) )
@@ -58,8 +92,8 @@
 
         var texts = g.append("text");
 
-        texts.attr("x", xScale(artistData.followers))
-        .attr("y", yScale(artistData.moneymade))
+        texts.attr("x", xScale(artistData.followers) )
+        .attr("y", yScale(artistData.moneymade) + 2 )
         .text(artistData.artist)
         .attr("font-size",10)
         .attr("style","text-anchor: middle");

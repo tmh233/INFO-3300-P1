@@ -11,42 +11,42 @@
 <body>
 
   <p>
-    <h1>An exploration on top musicians.</h1>
+    <h1>An exploration of top music-makers.</h1>
     <h3 class="gray">Kevin Hernandez (keh222), Gregory Clerie (gec73), Terrence Horgan (tmh233)</h3>
   </p>
     
+  <p class="space"></p>
   <!-- KEVIN's CHART -->
 
-  <span>
-    <div class="flexgraph">
-      <div id="out2"></div>
-      <div id="info2" class="info">
-        <h3>How big is the musical 1%?</h3>
-        <p>The billboard Hot-100 features 5200 different songs in a year. How many different songs "make it", however? The overal trend is ever less big-name-artists dominate the charts.</p>
-        <p>On the left, 56 years of billboard data on unique song/artist counts per year.</p>
-        <p id="out2key"></p>
-        <h4>Note how...</h4>
-        <ul>
-          <li>... the 60s saw the most fluent charts. In '67, <span class="song">827</span> different songs made it. That's more than double the measly <span class="song">406</span> charted in 1994.</li>
-          <li>... 1970 had <span class="artist">423</span> different top performers; last year it was only <span class="artist">346</span>.
-          </li>
-          <li>... the 90s were the decade of a few mainstream bangers. Only <span class="artist">291</span> different artists charted in '92; an all-time low.</li>
-        </ul>
-      </div>
+
+  <div class="flexgraph section">
+    <div id="out2"></div>
+    <div id="info2" class="info">
+      <h3>How big is the musical 1%?</h3>
+      <p>The billboard Hot-100 features 5200 different songs in a year. How many different songs "make it", however? The overal trend is ever less big-name-artists dominate the charts.</p>
+      <p>On the left, 56 years of billboard data on unique song/artist counts per year.</p>
+      <p id="out2key"></p>
+      <h4>Note how...</h4>
+      <ul>
+        <li>... the 60s saw the most fluent charts. In '67, <span class="song">827</span> different songs made it. That's more than double the measly <span class="song">406</span> charted in 1996.</li>
+        <li>... 1970 had <span class="artist">423</span> different top performers; last year it was only <span class="artist">346</span>.
+        </li>
+        <li>... the 90s were the decade of a few mainstream bangers. Only <span class="artist">291</span> different artists charted in '92; an all-time low.</li>
+        <li>... there's 52 weeks/year with 100 chart positions each - 5200 total positions per year. This means in the early '00s, only about 10% of a week's chart was new material.</li>
+      </ul>
     </div>
-    <div id="out1"></div>
-  </span>
+  </div>
+  
+
 
 
   <!-- GREG's CHART -->
-  <script scr="js/greg.js"></script>
 
-  <p>
-    <div class="flexgraph">
+    <div class="flexgraph section">
       <!-- Inspired by kenlimmj.github.io/cs3300/life_expectancy/ -->   
       <div id="graph"></div>
-          <div>
-            <h3>Artist Revenue vs. Popularity</h3>
+          <div id="info3">
+            <h3>Artist Revenue vs. Popularity (Spotify)</h3>
             <svg width="365" height="200">
               <text x="110" y="60" fill="black">Radius Size = Popularity</text>
               <text x="280" y="180" fill="black">135M (Highest)</text>
@@ -67,22 +67,36 @@
               <rect x="60" y="90" height="60" width="20" fill="#0a3d04"/>
               <rect x="40" y="90" height="60" width="20" fill="#072c03"/>
             </svg>
-            The size of the circle reflects the number of followers the artist has on Spotify and the brightness of the circles indicates the amount of revenue earned.
-          </div>
-    </div>
+            Popularity doesn't always translate into revenue; at least not by the Spotify metrics. The size of the circle reflects the number of followers the artist has on Spotify and the brightness of the circles indicates the amount of revenue earned.
 
-  </p>
+            <h4>Note how...</h4>
+            <ul>
+              <li>... there seems to be a bit of a generational gap at aroudn <span class="song">2.5M</span> followers. Except for <span class="artist">Jay Z</span> <span class="artist">Lady Gaga</span> and <span class="artist">Justin Timberlake</span>, all top-grossing arists below <span class="song">2.5M</span> followers are... "classics".</li>
+              <li>... at about the same <span class="song">4.0M</span> followers, <span class="artist">Katy Perry</span> earned more than <span class="song">x3</span> as much as <span class="artist">Bruno Mars</span>, <span class="song">135M</span> vs <span class="song">4M</span>.
+              </li>
+              <li>... <span class="artist">Dr.Dre</span> and <span class="artist">Maroon 5</span> are tied at "the bottom of the top" in terms of earnings, in spite of one having over <span class="song">x6.5</span> more followers than the other.</li>
+            </ul>
+          </div>
+        </div>
+    </div>
 
 
   <!-- TERRY'S CHART -->
-  <p>
-    <div>
-      <div class="flexgraph">
+      <div class="flexgraph section smaller">
         <div id="blurb" class="blurb">
-          <h3>Top 20 Countries with the most popular music</h3>
+          <h3>Where do the popular bands come from?</h3>
 
-          This map displays the 20 Countries that have the most popular music. They are arranged in ranks, you can see the rank of a country by hovering your mouse over that specific country, and if it shows no rank, then that country is not in the Top 20.
-          <svg width="420" height="300">
+          This map displays the 20 countries that produce the most popular music, colored by rank. Hovering your mouse over a specific country will display the name, and if it's in the top 20, the rank.
+
+          <h4>Note how...</h4>
+          <ul>
+            <li>... Africa has sadly no country in the list ): </li>
+            <li>... English speaking countries are killing it, with 4 big-name reps in the Top 10: <span class="artist">UK</span>, <span class="artist">EUA</span>, <span class="artist">Canada</span> and <span class="artist">Australia</span>.
+            </li>
+            <li>... <span class="artist">China</span> is not in the list. Has their music just not hit the west yet? K-Pop and J-Pop have definitley left their mark.</li>
+          </ul>
+
+          <svg width="420" height="200">
             <text x="190" y="45" fill="black">Not Ranked</text>
             <rect x="160" y="35" height="10" width="20" fill="#524E4B"/>
             <text x="375" y="140" fill="black">1 (Best)</text>
@@ -111,9 +125,8 @@
         </div>
         <div id="container"></div>
       </div>
-    </div>
-  </p>
 
+  <p class="space"></p>
 
 
  

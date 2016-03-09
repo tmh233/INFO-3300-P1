@@ -103,7 +103,7 @@
 
   function draw() {
 
-    d3.json("world-map.json", function(json) {
+    d3.json("data/world-map.json", function(json) {
       //Merge the rank in data2 and GeoJSON in a single array
       //Loop through once for each "rank" data value
       for (var i = 0; i < data2.length; i++) {
@@ -168,8 +168,8 @@
       
         });
           
-      var offsetL = document.getElementById('container').offsetLeft-20;
-      var offsetT = document.getElementById('container').offsetTop-10;
+      var offsetL = document.getElementById('container').offsetLeft-0;
+      var offsetT = document.getElementById('container').offsetTop+2;
       
       //modified to display rank of country, if it has one, if not, doesnt display any rank
       country
